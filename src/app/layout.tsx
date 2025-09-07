@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
 import { Footer } from "@/components/footer";
+import { Header } from "@/components/header";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -16,12 +17,22 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "PropertyPlatform - Find Your Dream Property",
-  description: "Discover the perfect property from our extensive collection of homes, apartments, and commercial spaces. Buy, sell, and rent with confidence.",
-  keywords: ["real estate", "property", "homes for sale", "apartments", "commercial property", "rentals", "real estate marketplace"],
+  description:
+    "Discover the perfect property from our extensive collection of homes, apartments, and commercial spaces. Buy, sell, and rent with confidence.",
+  keywords: [
+    "real estate",
+    "property",
+    "homes for sale",
+    "apartments",
+    "commercial property",
+    "rentals",
+    "real estate marketplace",
+  ],
   authors: [{ name: "PropertyPlatform Team" }],
   openGraph: {
     title: "PropertyPlatform - Find Your Dream Property",
-    description: "Discover the perfect property from our extensive collection of homes, apartments, and commercial spaces.",
+    description:
+      "Discover the perfect property from our extensive collection of homes, apartments, and commercial spaces.",
     url: "https://propertyplatform.com",
     siteName: "PropertyPlatform",
     type: "website",
@@ -29,7 +40,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "PropertyPlatform - Find Your Dream Property",
-    description: "Discover the perfect property from our extensive collection of homes, apartments, and commercial spaces.",
+    description:
+      "Discover the perfect property from our extensive collection of homes, apartments, and commercial spaces.",
   },
 };
 
@@ -44,9 +56,8 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background text-foreground`}
       >
         <div className="min-h-screen flex flex-col">
-          <main className="flex-1">
-            {children}
-          </main>
+          <Header />
+          <main className="flex-1">{children}</main>
           <Footer />
         </div>
         <Toaster />

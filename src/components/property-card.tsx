@@ -1,24 +1,25 @@
-'use client'
+"use client";
 
-import Image from 'next/image'
-import Link from 'next/link'
-import { Card, CardContent, CardFooter } from '@/components/ui/card'
-import { Badge } from '@/components/ui/badge'
-import { Button } from '@/components/ui/button'
-import { Bed, Bath, Square, MapPin, Heart, Eye } from 'lucide-react'
-import { Property } from '@/types/property'
+import Image from "next/image";
+import Link from "next/link";
+import { Card, CardContent, CardFooter } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Bed, Bath, Square, MapPin, Heart, Eye } from "lucide-react";
+import { Property } from "@/types/property";
 
 interface PropertyCardProps {
-  property: Property
+  property: Property;
 }
 
 export function PropertyCard({ property }: PropertyCardProps) {
-  const primaryImage = property.images.find(img => img.isPrimary) || property.images[0]
-  const formattedPrice = new Intl.NumberFormat('en-US', {
-    style: 'currency',
-    currency: property.currency,
+  const primaryImage =
+    property.images.find((img) => img.isPrimary) || property.images[0];
+  const formattedPrice = new Intl.NumberFormat("en-IN", {
+    style: "currency",
+    currency: "INR",
     maximumFractionDigits: 0,
-  }).format(property.price)
+  }).format(property.price);
 
   return (
     <Card className="overflow-hidden hover:shadow-lg transition-shadow duration-300 group">
@@ -37,17 +38,19 @@ export function PropertyCard({ property }: PropertyCardProps) {
               <MapPin className="h-12 w-12 text-gray-400" />
             </div>
           )}
-          
+
           {/* Status Badge */}
           <div className="absolute top-2 left-2">
-            <Badge 
-              variant={property.status === 'AVAILABLE' ? 'default' : 'secondary'}
+            <Badge
+              variant={
+                property.status === "AVAILABLE" ? "default" : "secondary"
+              }
               className={
-                property.status === 'AVAILABLE' 
-                  ? 'bg-green-500 hover:bg-green-600' 
-                  : property.status === 'SOLD' 
-                  ? 'bg-red-500 hover:bg-red-600'
-                  : 'bg-yellow-500 hover:bg-yellow-600'
+                property.status === "AVAILABLE"
+                  ? "bg-green-500 hover:bg-green-600"
+                  : property.status === "SOLD"
+                  ? "bg-red-500 hover:bg-red-600"
+                  : "bg-yellow-500 hover:bg-yellow-600"
               }
             >
               {property.status}
@@ -57,7 +60,10 @@ export function PropertyCard({ property }: PropertyCardProps) {
           {/* Featured Badge */}
           {property.featured && (
             <div className="absolute top-2 right-2">
-              <Badge variant="default" className="bg-blue-500 hover:bg-blue-600">
+              <Badge
+                variant="default"
+                className="bg-blue-500 hover:bg-blue-600"
+              >
                 Featured
               </Badge>
             </div>
@@ -65,9 +71,9 @@ export function PropertyCard({ property }: PropertyCardProps) {
 
           {/* Action Buttons */}
           <div className="absolute top-2 right-12 flex gap-1">
-            <Button 
-              size="sm" 
-              variant="secondary" 
+            <Button
+              size="sm"
+              variant="secondary"
               className="h-8 w-8 p-0 bg-white/80 hover:bg-white"
             >
               <Heart className="h-4 w-4" />
@@ -141,5 +147,5 @@ export function PropertyCard({ property }: PropertyCardProps) {
         </CardFooter>
       </div>
     </Card>
-  )
+  );
 }
