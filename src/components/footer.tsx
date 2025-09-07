@@ -1,63 +1,74 @@
-'use client'
+"use client";
 
-import Link from 'next/link'
-import { Separator } from '@/components/ui/separator'
-import { 
-  Home, 
-  Building, 
-  Phone, 
-  Mail, 
-  MapPin, 
-  Facebook, 
-  Twitter, 
-  Instagram, 
+import Link from "next/link";
+import { Separator } from "@/components/ui/separator";
+import {
+  Home,
+  Building,
+  Phone,
+  Mail,
+  MapPin,
+  Facebook,
+  Twitter,
+  Instagram,
   Linkedin,
   Heart,
-  IndianRupee
-} from 'lucide-react'
+  IndianRupee,
+} from "lucide-react";
 
 export function Footer() {
-  const currentYear = new Date().getFullYear()
+  const currentYear = new Date().getFullYear();
 
   const footerLinks = {
     property: [
-      { name: 'All Properties', href: '/properties' },
-      { name: 'Houses & Villas', href: '/properties?type=house' },
-      { name: 'Apartments & Flats', href: '/properties?type=apartment' },
-      { name: 'Commercial Property', href: '/properties?type=commercial' },
-      { name: 'Land & Plots', href: '/properties?type=land' },
+      { name: "All Properties", href: "/properties" },
+      { name: "Houses & Villas", href: "/properties?type=house" },
+      { name: "Apartments & Flats", href: "/properties?type=apartment" },
+      { name: "Commercial Property", href: "/properties?type=commercial" },
+      { name: "Land & Plots", href: "/properties?type=land" },
     ],
     company: [
-      { name: 'About Us', href: '/about' },
-      { name: 'Our Team', href: '/team' },
-      { name: 'Careers', href: '/careers' },
-      { name: 'Press', href: '/press' },
-      { name: 'Blog', href: '/blog' },
+      { name: "About Us", href: "/about" },
+      { name: "Our Team", href: "/team" },
+      { name: "Careers", href: "/careers" },
+      { name: "Press", href: "/press" },
+      { name: "Blog", href: "/blog" },
     ],
     support: [
-      { name: 'Help Center', href: '/help' },
-      { name: 'Contact Us', href: '/contact' },
-      { name: 'FAQ', href: '/faq' },
-      { name: 'Terms of Service', href: '/terms' },
-      { name: 'Privacy Policy', href: '/privacy' },
+      { name: "Help Center", href: "/help" },
+      { name: "Contact Us", href: "/contact" },
+      { name: "FAQ", href: "/faq" },
+      { name: "Terms of Service", href: "/terms" },
+      { name: "Privacy Policy", href: "/privacy" },
     ],
     contact: [
-      { icon: Phone, text: '🇮🇳 1800-123-4567', href: 'tel:18001234567' },
-      { icon: Mail, text: 'info@propertyindia.com', href: 'mailto:info@propertyindia.com' },
-      { icon: MapPin, text: 'Mumbai, Maharashtra 400001, India', href: '#' },
-    ]
-  }
+      { icon: Phone, text: "🇮🇳 1800-123-4567", href: "tel:18001234567" },
+      {
+        icon: Mail,
+        text: "info@propertyindia.com",
+        href: "mailto:info@propertyindia.com",
+      },
+      { icon: MapPin, text: "Mumbai, Maharashtra 400001, India", href: "#" },
+    ],
+  };
 
   const socialLinks = [
-    { icon: Facebook, href: 'https://facebook.com', label: 'Facebook' },
-    { icon: Twitter, href: 'https://twitter.com', label: 'Twitter' },
-    { icon: Instagram, href: 'https://instagram.com', label: 'Instagram' },
-    { icon: Linkedin, href: 'https://linkedin.com', label: 'LinkedIn' },
-  ]
+    { icon: Facebook, href: "https://facebook.com", label: "Facebook" },
+    { icon: Twitter, href: "https://twitter.com", label: "Twitter" },
+    { icon: Instagram, href: "https://instagram.com", label: "Instagram" },
+    { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
+  ];
 
   const indianCities = [
-    'Mumbai', 'Delhi', 'Bangalore', 'Hyderabad', 'Chennai', 'Kolkata', 'Pune', 'Ahmedabad'
-  ]
+    "Mumbai",
+    "Delhi",
+    "Bangalore",
+    "Hyderabad",
+    "Chennai",
+    "Kolkata",
+    "Pune",
+    "Ahmedabad",
+  ];
 
   return (
     <footer className="bg-gray-900 text-white">
@@ -72,11 +83,15 @@ export function Footer() {
               </div>
               <div>
                 <span className="text-2xl font-bold">PropertyIndia</span>
-                <p className="text-xs text-gray-400">Find Your Dream Home in India</p>
+                <p className="text-xs text-gray-400">
+                  Find Your Dream Home in India
+                </p>
               </div>
             </div>
             <p className="text-gray-300 text-sm leading-relaxed">
-              India's most trusted property platform. Discover the perfect home from millions of listings across all major Indian cities. Buy, sell, and rent with confidence.
+              India's most trusted property platform. Discover the perfect home
+              from millions of listings across all major Indian cities. Buy,
+              sell, and rent with confidence.
             </p>
             <div className="flex space-x-4">
               {socialLinks.map((social) => (
@@ -92,10 +107,12 @@ export function Footer() {
             </div>
             {/* Popular Cities */}
             <div className="mt-4">
-              <h4 className="text-sm font-medium mb-2 text-orange-400">Popular Cities</h4>
+              <h4 className="text-sm font-medium mb-2 text-orange-400">
+                Popular Cities
+              </h4>
               <div className="flex flex-wrap gap-2">
-                {indianCities.map(city => (
-                  <Link 
+                {indianCities.map((city) => (
+                  <Link
                     key={city}
                     href={`/properties?city=${city.toLowerCase()}`}
                     className="text-xs bg-gray-800 hover:bg-orange-600 px-2 py-1 rounded transition-colors"
@@ -125,20 +142,31 @@ export function Footer() {
                 </li>
               ))}
             </ul>
-            
+
             {/* Quick Actions */}
             <div className="mt-6 p-3 bg-gray-800 rounded-lg">
-              <h4 className="text-sm font-medium mb-2 text-orange-400">Quick Actions</h4>
+              <h4 className="text-sm font-medium mb-2 text-orange-400">
+                Quick Actions
+              </h4>
               <div className="space-y-2">
-                <Link href="/post-property" className="flex items-center text-sm text-gray-300 hover:text-orange-400 transition-colors">
+                <Link
+                  href="/post-property"
+                  className="flex items-center text-sm text-gray-300 hover:text-orange-400 transition-colors"
+                >
                   <IndianRupee className="h-3 w-3 mr-2" />
                   Post Property FREE
                 </Link>
-                <Link href="/property-valuation" className="flex items-center text-sm text-gray-300 hover:text-orange-400 transition-colors">
+                <Link
+                  href="/property-valuation"
+                  className="flex items-center text-sm text-gray-300 hover:text-orange-400 transition-colors"
+                >
                   <Home className="h-3 w-3 mr-2" />
                   Property Valuation
                 </Link>
-                <Link href="/emi-calculator" className="flex items-center text-sm text-gray-300 hover:text-orange-400 transition-colors">
+                <Link
+                  href="/emi-calculator"
+                  className="flex items-center text-sm text-gray-300 hover:text-orange-400 transition-colors"
+                >
                   <IndianRupee className="h-3 w-3 mr-2" />
                   EMI Calculator
                 </Link>
@@ -161,21 +189,35 @@ export function Footer() {
                 </li>
               ))}
             </ul>
-            
+
             {/* Services */}
             <div className="mt-6">
-              <h4 className="text-sm font-medium mb-2 text-orange-400">Our Services</h4>
+              <h4 className="text-sm font-medium mb-2 text-orange-400">
+                Our Services
+              </h4>
               <div className="space-y-2">
-                <Link href="/home-loans" className="block text-sm text-gray-300 hover:text-orange-400 transition-colors">
+                <Link
+                  href="/home-loans"
+                  className="block text-sm text-gray-300 hover:text-orange-400 transition-colors"
+                >
                   Home Loans
                 </Link>
-                <Link href="/legal-services" className="block text-sm text-gray-300 hover:text-orange-400 transition-colors">
+                <Link
+                  href="/legal-services"
+                  className="block text-sm text-gray-300 hover:text-orange-400 transition-colors"
+                >
                   Legal Services
                 </Link>
-                <Link href="/interior-design" className="block text-sm text-gray-300 hover:text-orange-400 transition-colors">
+                <Link
+                  href="/interior-design"
+                  className="block text-sm text-gray-300 hover:text-orange-400 transition-colors"
+                >
                   Interior Design
                 </Link>
-                <Link href="/property-management" className="block text-sm text-gray-300 hover:text-orange-400 transition-colors">
+                <Link
+                  href="/property-management"
+                  className="block text-sm text-gray-300 hover:text-orange-400 transition-colors"
+                >
                   Property Management
                 </Link>
               </div>
@@ -197,7 +239,7 @@ export function Footer() {
                 </Link>
               ))}
             </div>
-            
+
             {/* Newsletter Signup */}
             <div className="mt-6">
               <h4 className="text-sm font-medium mb-2">Stay Updated</h4>
@@ -240,23 +282,32 @@ export function Footer() {
           <div className="flex items-center space-x-4 text-sm text-gray-400">
             <span>© {currentYear} PropertyIndia. All rights reserved.</span>
             <span>|</span>
-            <Link href="/terms" className="hover:text-orange-400 transition-colors">
+            <Link
+              href="/terms"
+              className="hover:text-orange-400 transition-colors"
+            >
               Terms of Service
             </Link>
             <span>|</span>
-            <Link href="/privacy" className="hover:text-orange-400 transition-colors">
+            <Link
+              href="/privacy"
+              className="hover:text-orange-400 transition-colors"
+            >
               Privacy Policy
             </Link>
             <span>|</span>
-            <Link href="/rera" className="hover:text-orange-400 transition-colors">
+            <Link
+              href="/rera"
+              className="hover:text-orange-400 transition-colors"
+            >
               RERA Compliance
             </Link>
           </div>
-          
+
           <div className="flex items-center space-x-2 text-sm text-gray-400">
             <span>Made with</span>
             <Heart className="h-4 w-4 text-red-500 fill-current" />
-            <span>for India 🇮🇳</span>
+            <span>for India 🇮🇳 - AKASH BADOLE</span>
           </div>
         </div>
       </div>
@@ -265,30 +316,51 @@ export function Footer() {
       <div className="bg-gray-800 py-4">
         <div className="container mx-auto px-4">
           <div className="flex flex-wrap justify-center items-center space-x-6 text-sm">
-            <Link href="/properties" className="text-gray-400 hover:text-orange-400 transition-colors">
+            <Link
+              href="/properties"
+              className="text-gray-400 hover:text-orange-400 transition-colors"
+            >
               Buy in India
             </Link>
-            <Link href="/rent" className="text-gray-400 hover:text-orange-400 transition-colors">
+            <Link
+              href="/rent"
+              className="text-gray-400 hover:text-orange-400 transition-colors"
+            >
               Rent in India
             </Link>
-            <Link href="/commercial" className="text-gray-400 hover:text-orange-400 transition-colors">
+            <Link
+              href="/commercial"
+              className="text-gray-400 hover:text-orange-400 transition-colors"
+            >
               Commercial Property
             </Link>
-            <Link href="/agents" className="text-gray-400 hover:text-orange-400 transition-colors">
+            <Link
+              href="/agents"
+              className="text-gray-400 hover:text-orange-400 transition-colors"
+            >
               Real Estate Agents
             </Link>
-            <Link href="/projects" className="text-gray-400 hover:text-orange-400 transition-colors">
+            <Link
+              href="/projects"
+              className="text-gray-400 hover:text-orange-400 transition-colors"
+            >
               New Projects
             </Link>
-            <Link href="/home-loans" className="text-gray-400 hover:text-orange-400 transition-colors">
+            <Link
+              href="/home-loans"
+              className="text-gray-400 hover:text-orange-400 transition-colors"
+            >
               Home Loans
             </Link>
-            <Link href="/emi-calculator" className="text-gray-400 hover:text-orange-400 transition-colors">
+            <Link
+              href="/emi-calculator"
+              className="text-gray-400 hover:text-orange-400 transition-colors"
+            >
               EMI Calculator
             </Link>
           </div>
         </div>
       </div>
     </footer>
-  )
+  );
 }
