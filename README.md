@@ -2,9 +2,12 @@
 
 A modern, full-featured property marketplace built with Next.js 15, TypeScript, and Prisma. This platform enables users to buy, sell, and browse properties with advanced search capabilities, detailed property listings, and contact functionality.
 
+![PropertyPlatform](PropertyPlatform.png)
+
 ## ✨ Key Features
 
 ### 🏘️ Property Management
+
 - **Property Listings**: Browse extensive collection of residential and commercial properties
 - **Advanced Search**: Filter by location, price, property type, bedrooms, bathrooms, and more
 - **Property Details**: Comprehensive property information with high-quality images
@@ -12,6 +15,7 @@ A modern, full-featured property marketplace built with Next.js 15, TypeScript, 
 - **Property Categories**: Houses, Apartments, Condos, Villas, Land, Commercial spaces
 
 ### 🔍 Search & Discovery
+
 - **Smart Search**: Real-time search with autocomplete suggestions
 - **Advanced Filters**: Multiple filter options for precise property discovery
 - **Location-based Search**: Find properties by city, state, or country
@@ -20,6 +24,7 @@ A modern, full-featured property marketplace built with Next.js 15, TypeScript, 
 - **Status Filtering**: Available, Pending, Sold, Rented properties
 
 ### 📱 User Experience
+
 - **Responsive Design**: Mobile-first approach with beautiful desktop experience
 - **Modern UI**: Clean, intuitive interface built with shadcn/ui components
 - **Property Cards**: Engaging property previews with key information
@@ -28,6 +33,7 @@ A modern, full-featured property marketplace built with Next.js 15, TypeScript, 
 - **Quick Actions**: Save, share, and contact property owners
 
 ### 🛠️ Technical Features
+
 - **Type Safety**: Full TypeScript implementation with strict typing
 - **Database**: Prisma ORM with SQLite (development) and PostgreSQL/MySQL (production) support
 - **API Routes**: RESTful API for property and message management
@@ -37,21 +43,25 @@ A modern, full-featured property marketplace built with Next.js 15, TypeScript, 
 ## 🚀 Technology Stack
 
 ### Core Framework
+
 - **⚡ Next.js 15** - React framework with App Router
 - **📘 TypeScript 5** - Type-safe JavaScript development
 - **🎨 Tailwind CSS 4** - Utility-first CSS framework
 
 ### UI & Components
+
 - **🧩 shadcn/ui** - High-quality, accessible components
 - **🎯 Lucide React** - Beautiful icon library
 - **🖼️ Next.js Image** - Optimized image handling
 
 ### Database & Backend
+
 - **🗄️ Prisma** - Next-generation ORM
 - **💾 SQLite** - Development database
 - **🐘 PostgreSQL/MySQL** - Production database support
 
 ### State & Data Management
+
 - **🔄 React Hooks** - Built-in state management
 - **📡 Fetch API** - Modern data fetching
 - **🗂️ Client-side Caching** - Efficient data management
@@ -59,6 +69,7 @@ A modern, full-featured property marketplace built with Next.js 15, TypeScript, 
 ## 🎯 Property Types Supported
 
 ### Residential Properties
+
 - **Houses**: Single-family homes, townhouses
 - **Apartments**: Multi-unit residential buildings
 - **Condos**: Condominiums with shared amenities
@@ -66,6 +77,7 @@ A modern, full-featured property marketplace built with Next.js 15, TypeScript, 
 - **Land**: Vacant land for development
 
 ### Commercial Properties
+
 - **Commercial**: General commercial spaces
 - **Offices**: Business and office spaces
 - **Retail**: Shops and retail spaces
@@ -98,6 +110,7 @@ src/
 ## 🚀 Quick Start
 
 ### Prerequisites
+
 - Node.js 18+ installed
 - npm or yarn package manager
 - Git for version control
@@ -105,35 +118,41 @@ src/
 ### Installation
 
 1. **Clone the repository**
+
    ```bash
    git clone <your-repository-url>
    cd property-platform
    ```
 
 2. **Install dependencies**
+
    ```bash
    npm install
    ```
 
 3. **Set up environment variables**
+
    ```bash
    cp .env.example .env.local
    ```
+
    Edit `.env.local` with your database configuration.
 
 4. **Set up the database**
+
    ```bash
    # Generate Prisma client
    npm run db:generate
-   
+
    # Push schema to database
    npm run db:push
-   
+
    # Seed with sample data (optional)
    npx tsx prisma/seed.ts
    ```
 
 5. **Start development server**
+
    ```bash
    npm run dev
    ```
@@ -146,6 +165,7 @@ src/
 The platform uses a comprehensive database schema with the following main entities:
 
 ### Core Models
+
 - **User**: Property owners, agents, and buyers
 - **Property**: Property listings with detailed information
 - **PropertyImage**: Property images with ordering and primary flags
@@ -154,6 +174,7 @@ The platform uses a comprehensive database schema with the following main entiti
 - **Review**: Property reviews and ratings
 
 ### Key Relationships
+
 - Users can own multiple properties
 - Properties can have multiple images and features
 - Users can send messages about properties
@@ -184,6 +205,7 @@ npm run analyze      # Analyze bundle size
 ## 🌟 Features in Detail
 
 ### Property Search
+
 - **Homepage Search**: Quick search bar with location and property type filters
 - **Advanced Filters**: Comprehensive filtering options including:
   - Price range (min/max)
@@ -195,6 +217,7 @@ npm run analyze      # Analyze bundle size
   - Location-based filtering
 
 ### Property Listings
+
 - **Grid Layout**: Responsive grid of property cards
 - **Property Cards**: Include image, title, price, location, key features
 - **Status Badges**: Visual indicators for property status
@@ -203,6 +226,7 @@ npm run analyze      # Analyze bundle size
 - **Pagination**: Navigate through multiple pages of results
 
 ### Property Details
+
 - **Image Gallery**: Primary image with thumbnail gallery
 - **Comprehensive Info**: All property details including:
   - Price and currency
@@ -215,6 +239,7 @@ npm run analyze      # Analyze bundle size
 - **Quick Actions**: Save, share, and contact options
 
 ### Contact System
+
 - **Message Forms**: Structured contact forms for property inquiries
 - **Owner Contact**: Direct contact with property owners
 - **Message Management**: Track and manage contact requests
@@ -223,6 +248,7 @@ npm run analyze      # Analyze bundle size
 ## 🚀 Deployment
 
 ### Production Deployment
+
 1. **Set up production database**
 2. **Configure environment variables**
 3. **Build the application**
@@ -231,6 +257,7 @@ npm run analyze      # Analyze bundle size
 See [DEPLOYMENT.md](./DEPLOYMENT.md) for detailed deployment instructions.
 
 ### Deployment Platforms
+
 - **Vercel**: Recommended for Next.js applications
 - **Netlify**: Static site hosting with serverless functions
 - **AWS Amplify**: Full-stack deployment
@@ -239,6 +266,7 @@ See [DEPLOYMENT.md](./DEPLOYMENT.md) for detailed deployment instructions.
 ## 🔧 Configuration
 
 ### Environment Variables
+
 ```env
 # Database
 DATABASE_URL="file:./dev.db" # Development
@@ -254,6 +282,7 @@ GOOGLE_CLIENT_SECRET="your-client-secret"
 ```
 
 ### Customization
+
 - **Branding**: Update logos and colors in the components
 - **Property Types**: Modify the PropertyType enum in Prisma schema
 - **Features**: Add custom property features as needed
@@ -274,6 +303,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 ## 🆘 Support
 
 For support and questions:
+
 - Check the [GitHub Issues](https://github.com/your-repo/issues)
 - Review the [deployment guide](./DEPLOYMENT.md)
 - Contact the development team
