@@ -1,0 +1,123 @@
+
+> nextjs_tailwind_shadcn_ts@0.1.0 dev
+> nodemon --exec "npx tsx server.ts" --watch server.ts --watch src --ext ts,tsx,js,jsx 2>&1 | tee dev.log
+
+[33m[nodemon] 3.1.10[39m
+[33m[nodemon] to restart at any time, enter `rs`[39m
+[33m[nodemon] watching path(s): server.ts src/**/*[39m
+[33m[nodemon] watching extensions: ts,tsx,js,jsx[39m
+[32m[nodemon] starting `npx tsx server.ts`[39m
+ ⨯ uncaughtException: Error: listen EADDRINUSE: address already in use 0.0.0.0:3000
+    at <unknown> (Error: listen EADDRINUSE: address already in use 0.0.0.0:3000) {
+  code: 'EADDRINUSE',
+  errno: -98,
+  syscall: 'listen',
+  address: '0.0.0.0',
+  port: 3000
+}
+ ⨯ uncaughtException:  Error: listen EADDRINUSE: address already in use 0.0.0.0:3000
+    at <unknown> (Error: listen EADDRINUSE: address already in use 0.0.0.0:3000) {
+  code: 'EADDRINUSE',
+  errno: -98,
+  syscall: 'listen',
+  address: '0.0.0.0',
+  port: 3000
+}
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `npx tsx server.ts`[39m
+ ⨯ uncaughtException: Error: listen EADDRINUSE: address already in use 0.0.0.0:3000
+    at <unknown> (Error: listen EADDRINUSE: address already in use 0.0.0.0:3000) {
+  code: 'EADDRINUSE',
+  errno: -98,
+  syscall: 'listen',
+  address: '0.0.0.0',
+  port: 3000
+}
+ ⨯ uncaughtException:  Error: listen EADDRINUSE: address already in use 0.0.0.0:3000
+    at <unknown> (Error: listen EADDRINUSE: address already in use 0.0.0.0:3000) {
+  code: 'EADDRINUSE',
+  errno: -98,
+  syscall: 'listen',
+  address: '0.0.0.0',
+  port: 3000
+}
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `npx tsx server.ts`[39m
+ ⨯ uncaughtException: Error: listen EADDRINUSE: address already in use 0.0.0.0:3000
+    at <unknown> (Error: listen EADDRINUSE: address already in use 0.0.0.0:3000) {
+  code: 'EADDRINUSE',
+  errno: -98,
+  syscall: 'listen',
+  address: '0.0.0.0',
+  port: 3000
+}
+ ⨯ uncaughtException:  Error: listen EADDRINUSE: address already in use 0.0.0.0:3000
+    at <unknown> (Error: listen EADDRINUSE: address already in use 0.0.0.0:3000) {
+  code: 'EADDRINUSE',
+  errno: -98,
+  syscall: 'listen',
+  address: '0.0.0.0',
+  port: 3000
+}
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `npx tsx server.ts`[39m
+ ⨯ uncaughtException: Error: listen EADDRINUSE: address already in use 0.0.0.0:3000
+    at <unknown> (Error: listen EADDRINUSE: address already in use 0.0.0.0:3000) {
+  code: 'EADDRINUSE',
+  errno: -98,
+  syscall: 'listen',
+  address: '0.0.0.0',
+  port: 3000
+}
+ ⨯ uncaughtException:  Error: listen EADDRINUSE: address already in use 0.0.0.0:3000
+    at <unknown> (Error: listen EADDRINUSE: address already in use 0.0.0.0:3000) {
+  code: 'EADDRINUSE',
+  errno: -98,
+  syscall: 'listen',
+  address: '0.0.0.0',
+  port: 3000
+}
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `npx tsx server.ts`[39m
+> Ready on http://0.0.0.0:3000
+> Socket.IO server running at ws://0.0.0.0:3000/api/socketio
+ ○ Compiling / ...
+ ✓ Compiled / in 6.7s (1062 modules)
+ GET / 200 in 7462ms
+ GET / 200 in 110ms
+ ○ Compiling /api/properties ...
+ ✓ Compiled /api/properties in 584ms (1051 modules)
+prisma:query SELECT `main`.`Property`.`id`, `main`.`Property`.`title`, `main`.`Property`.`description`, `main`.`Property`.`price`, `main`.`Property`.`currency`, `main`.`Property`.`propertyType`, `main`.`Property`.`status`, `main`.`Property`.`bedrooms`, `main`.`Property`.`bathrooms`, `main`.`Property`.`area`, `main`.`Property`.`landArea`, `main`.`Property`.`yearBuilt`, `main`.`Property`.`address`, `main`.`Property`.`city`, `main`.`Property`.`state`, `main`.`Property`.`country`, `main`.`Property`.`postalCode`, `main`.`Property`.`latitude`, `main`.`Property`.`longitude`, `main`.`Property`.`featured`, `main`.`Property`.`views`, `main`.`Property`.`createdAt`, `main`.`Property`.`updatedAt`, `main`.`Property`.`ownerId`, COALESCE(`aggr_selection_0_Review`.`_aggr_count_reviews`, 0) AS `_aggr_count_reviews`, COALESCE(`aggr_selection_1_Message`.`_aggr_count_messages`, 0) AS `_aggr_count_messages` FROM `main`.`Property` LEFT JOIN (SELECT `main`.`Review`.`propertyId`, COUNT(*) AS `_aggr_count_reviews` FROM `main`.`Review` WHERE 1=1 GROUP BY `main`.`Review`.`propertyId`) AS `aggr_selection_0_Review` ON (`main`.`Property`.`id` = `aggr_selection_0_Review`.`propertyId`) LEFT JOIN (SELECT `main`.`Message`.`propertyId`, COUNT(*) AS `_aggr_count_messages` FROM `main`.`Message` WHERE 1=1 GROUP BY `main`.`Message`.`propertyId`) AS `aggr_selection_1_Message` ON (`main`.`Property`.`id` = `aggr_selection_1_Message`.`propertyId`) WHERE 1=1 ORDER BY `main`.`Property`.`createdAt` DESC LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`name`, `main`.`User`.`email`, `main`.`User`.`phone`, `main`.`User`.`avatar` FROM `main`.`User` WHERE `main`.`User`.`id` IN (?,?) LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`PropertyImage`.`id`, `main`.`PropertyImage`.`url`, `main`.`PropertyImage`.`alt`, `main`.`PropertyImage`.`isPrimary`, `main`.`PropertyImage`.`order`, `main`.`PropertyImage`.`createdAt`, `main`.`PropertyImage`.`propertyId` FROM `main`.`PropertyImage` WHERE `main`.`PropertyImage`.`propertyId` IN (?,?,?,?,?,?) ORDER BY `main`.`PropertyImage`.`order` ASC LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`PropertyFeature`.`id`, `main`.`PropertyFeature`.`name`, `main`.`PropertyFeature`.`value`, `main`.`PropertyFeature`.`createdAt`, `main`.`PropertyFeature`.`propertyId` FROM `main`.`PropertyFeature` WHERE `main`.`PropertyFeature`.`propertyId` IN (?,?,?,?,?,?) ORDER BY `main`.`PropertyFeature`.`createdAt` ASC LIMIT ? OFFSET ?
+prisma:query SELECT COUNT(*) AS `_count._all` FROM (SELECT `main`.`Property`.`id` FROM `main`.`Property` WHERE 1=1 LIMIT ? OFFSET ?) AS `sub`
+prisma:query UPDATE `main`.`Property` SET `views` = (`main`.`Property`.`views` + ?), `updatedAt` = ? WHERE (`main`.`Property`.`id` = ? AND 1=1) RETURNING `id` AS `id`, `title` AS `title`, `description` AS `description`, `price` AS `price`, `currency` AS `currency`, `propertyType` AS `propertyType`, `status` AS `status`, `bedrooms` AS `bedrooms`, `bathrooms` AS `bathrooms`, `area` AS `area`, `landArea` AS `landArea`, `yearBuilt` AS `yearBuilt`, `address` AS `address`, `city` AS `city`, `state` AS `state`, `country` AS `country`, `postalCode` AS `postalCode`, `latitude` AS `latitude`, `longitude` AS `longitude`, `featured` AS `featured`, `views` AS `views`, `createdAt` AS `createdAt`, `updatedAt` AS `updatedAt`, `ownerId` AS `ownerId`
+prisma:query UPDATE `main`.`Property` SET `views` = (`main`.`Property`.`views` + ?), `updatedAt` = ? WHERE (`main`.`Property`.`id` = ? AND 1=1) RETURNING `id` AS `id`, `title` AS `title`, `description` AS `description`, `price` AS `price`, `currency` AS `currency`, `propertyType` AS `propertyType`, `status` AS `status`, `bedrooms` AS `bedrooms`, `bathrooms` AS `bathrooms`, `area` AS `area`, `landArea` AS `landArea`, `yearBuilt` AS `yearBuilt`, `address` AS `address`, `city` AS `city`, `state` AS `state`, `country` AS `country`, `postalCode` AS `postalCode`, `latitude` AS `latitude`, `longitude` AS `longitude`, `featured` AS `featured`, `views` AS `views`, `createdAt` AS `createdAt`, `updatedAt` AS `updatedAt`, `ownerId` AS `ownerId`
+prisma:query UPDATE `main`.`Property` SET `views` = (`main`.`Property`.`views` + ?), `updatedAt` = ? WHERE (`main`.`Property`.`id` = ? AND 1=1) RETURNING `id` AS `id`, `title` AS `title`, `description` AS `description`, `price` AS `price`, `currency` AS `currency`, `propertyType` AS `propertyType`, `status` AS `status`, `bedrooms` AS `bedrooms`, `bathrooms` AS `bathrooms`, `area` AS `area`, `landArea` AS `landArea`, `yearBuilt` AS `yearBuilt`, `address` AS `address`, `city` AS `city`, `state` AS `state`, `country` AS `country`, `postalCode` AS `postalCode`, `latitude` AS `latitude`, `longitude` AS `longitude`, `featured` AS `featured`, `views` AS `views`, `createdAt` AS `createdAt`, `updatedAt` AS `updatedAt`, `ownerId` AS `ownerId`
+prisma:query UPDATE `main`.`Property` SET `views` = (`main`.`Property`.`views` + ?), `updatedAt` = ? WHERE (`main`.`Property`.`id` = ? AND 1=1) RETURNING `id` AS `id`, `title` AS `title`, `description` AS `description`, `price` AS `price`, `currency` AS `currency`, `propertyType` AS `propertyType`, `status` AS `status`, `bedrooms` AS `bedrooms`, `bathrooms` AS `bathrooms`, `area` AS `area`, `landArea` AS `landArea`, `yearBuilt` AS `yearBuilt`, `address` AS `address`, `city` AS `city`, `state` AS `state`, `country` AS `country`, `postalCode` AS `postalCode`, `latitude` AS `latitude`, `longitude` AS `longitude`, `featured` AS `featured`, `views` AS `views`, `createdAt` AS `createdAt`, `updatedAt` AS `updatedAt`, `ownerId` AS `ownerId`
+prisma:query UPDATE `main`.`Property` SET `views` = (`main`.`Property`.`views` + ?), `updatedAt` = ? WHERE (`main`.`Property`.`id` = ? AND 1=1) RETURNING `id` AS `id`, `title` AS `title`, `description` AS `description`, `price` AS `price`, `currency` AS `currency`, `propertyType` AS `propertyType`, `status` AS `status`, `bedrooms` AS `bedrooms`, `bathrooms` AS `bathrooms`, `area` AS `area`, `landArea` AS `landArea`, `yearBuilt` AS `yearBuilt`, `address` AS `address`, `city` AS `city`, `state` AS `state`, `country` AS `country`, `postalCode` AS `postalCode`, `latitude` AS `latitude`, `longitude` AS `longitude`, `featured` AS `featured`, `views` AS `views`, `createdAt` AS `createdAt`, `updatedAt` AS `updatedAt`, `ownerId` AS `ownerId`
+prisma:query UPDATE `main`.`Property` SET `views` = (`main`.`Property`.`views` + ?), `updatedAt` = ? WHERE (`main`.`Property`.`id` = ? AND 1=1) RETURNING `id` AS `id`, `title` AS `title`, `description` AS `description`, `price` AS `price`, `currency` AS `currency`, `propertyType` AS `propertyType`, `status` AS `status`, `bedrooms` AS `bedrooms`, `bathrooms` AS `bathrooms`, `area` AS `area`, `landArea` AS `landArea`, `yearBuilt` AS `yearBuilt`, `address` AS `address`, `city` AS `city`, `state` AS `state`, `country` AS `country`, `postalCode` AS `postalCode`, `latitude` AS `latitude`, `longitude` AS `longitude`, `featured` AS `featured`, `views` AS `views`, `createdAt` AS `createdAt`, `updatedAt` AS `updatedAt`, `ownerId` AS `ownerId`
+ GET /api/properties? 200 in 778ms
+ ⚠ The "images.domains" configuration is deprecated. Please use "images.remotePatterns" configuration instead.
+ ○ Compiling /property/[id] ...
+ ✓ Compiled /property/[id] in 760ms (1096 modules)
+ GET /property/cmf9exx0d0017upoi8s2608rx 200 in 1734ms
+ GET /property/cmf9exx0c0011upoiwu14c0w7 200 in 32ms
+ ✓ Compiled /api/properties/[id] in 271ms (1084 modules)
+Error: Route "/api/properties/[id]" used `params.id`. `params` should be awaited before using its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+    at GET (src/app/api/properties/[id]/route.ts:9:12)
+   7 | ) {
+   8 |   try {
+>  9 |     const { id } = params
+     |            ^
+  10 |
+  11 |     const property = await db.property.findUnique({
+  12 |       where: { id },
+prisma:query SELECT `main`.`Property`.`id`, `main`.`Property`.`title`, `main`.`Property`.`description`, `main`.`Property`.`price`, `main`.`Property`.`currency`, `main`.`Property`.`propertyType`, `main`.`Property`.`status`, `main`.`Property`.`bedrooms`, `main`.`Property`.`bathrooms`, `main`.`Property`.`area`, `main`.`Property`.`landArea`, `main`.`Property`.`yearBuilt`, `main`.`Property`.`address`, `main`.`Property`.`city`, `main`.`Property`.`state`, `main`.`Property`.`country`, `main`.`Property`.`postalCode`, `main`.`Property`.`latitude`, `main`.`Property`.`longitude`, `main`.`Property`.`featured`, `main`.`Property`.`views`, `main`.`Property`.`createdAt`, `main`.`Property`.`updatedAt`, `main`.`Property`.`ownerId`, COALESCE(`aggr_selection_0_Review`.`_aggr_count_reviews`, 0) AS `_aggr_count_reviews`, COALESCE(`aggr_selection_1_Message`.`_aggr_count_messages`, 0) AS `_aggr_count_messages` FROM `main`.`Property` LEFT JOIN (SELECT `main`.`Review`.`propertyId`, COUNT(*) AS `_aggr_count_reviews` FROM `main`.`Review` WHERE 1=1 GROUP BY `main`.`Review`.`propertyId`) AS `aggr_selection_0_Review` ON (`main`.`Property`.`id` = `aggr_selection_0_Review`.`propertyId`) LEFT JOIN (SELECT `main`.`Message`.`propertyId`, COUNT(*) AS `_aggr_count_messages` FROM `main`.`Message` WHERE 1=1 GROUP BY `main`.`Message`.`propertyId`) AS `aggr_selection_1_Message` ON (`main`.`Property`.`id` = `aggr_selection_1_Message`.`propertyId`) WHERE (`main`.`Property`.`id` = ? AND 1=1) LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`name`, `main`.`User`.`email`, `main`.`User`.`phone`, `main`.`User`.`avatar`, `main`.`User`.`role` FROM `main`.`User` WHERE `main`.`User`.`id` IN (?) LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`PropertyImage`.`id`, `main`.`PropertyImage`.`url`, `main`.`PropertyImage`.`alt`, `main`.`PropertyImage`.`isPrimary`, `main`.`PropertyImage`.`order`, `main`.`PropertyImage`.`createdAt`, `main`.`PropertyImage`.`propertyId` FROM `main`.`PropertyImage` WHERE `main`.`PropertyImage`.`propertyId` IN (?) ORDER BY `main`.`PropertyImage`.`order` ASC LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`PropertyFeature`.`id`, `main`.`PropertyFeature`.`name`, `main`.`PropertyFeature`.`value`, `main`.`PropertyFeature`.`createdAt`, `main`.`PropertyFeature`.`propertyId` FROM `main`.`PropertyFeature` WHERE `main`.`PropertyFeature`.`propertyId` IN (?) ORDER BY `main`.`PropertyFeature`.`createdAt` ASC LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Review`.`id`, `main`.`Review`.`rating`, `main`.`Review`.`comment`, `main`.`Review`.`createdAt`, `main`.`Review`.`userId`, `main`.`Review`.`propertyId` FROM `main`.`Review` WHERE `main`.`Review`.`propertyId` IN (?) ORDER BY `main`.`Review`.`createdAt` DESC LIMIT ? OFFSET ?
+prisma:query UPDATE `main`.`Property` SET `views` = (`main`.`Property`.`views` + ?), `updatedAt` = ? WHERE (`main`.`Property`.`id` = ? AND 1=1) RETURNING `id` AS `id`, `title` AS `title`, `description` AS `description`, `price` AS `price`, `currency` AS `currency`, `propertyType` AS `propertyType`, `status` AS `status`, `bedrooms` AS `bedrooms`, `bathrooms` AS `bathrooms`, `area` AS `area`, `landArea` AS `landArea`, `yearBuilt` AS `yearBuilt`, `address` AS `address`, `city` AS `city`, `state` AS `state`, `country` AS `country`, `postalCode` AS `postalCode`, `latitude` AS `latitude`, `longitude` AS `longitude`, `featured` AS `featured`, `views` AS `views`, `createdAt` AS `createdAt`, `updatedAt` AS `updatedAt`, `ownerId` AS `ownerId`
+ GET /api/properties/cmf9exx0c0011upoiwu14c0w7 200 in 1328ms
